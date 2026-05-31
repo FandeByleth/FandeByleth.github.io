@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>SISTEMAS OPERATIVOS</title>
+		<meta charset="utf-8">
+		<script>
+			let user = "";
+			let password = "";
+			const user_list = ["Gabriel Zuniga", "Adrian IG"];
+			const user_password = ["gazg3140","adig0203"];
+			let k;
+
+			function validar(){
+				user = document.getElementById("text_user").value;
+				password = document.getElementById("text_password").value;
+				let flag = false;
+
+				for(let i=0; i<user_list.length; i++){
+					if(user == user_list[i]){
+						flag = true;
+						k = i;
+						break;
+					}
+				}
+
+				if(flag){
+					if(password == user_password[k]){
+						alert("Bienvenido " + user_list[k] + "!!!");
+						window.location.href = "principal.html";
+					}
+					else{
+						alert("Contraseña Incorrecta!!!");
+					}
+				}
+				else{
+					alert("Usuario Incorrecto!!!");
+				}
+			}
+
+			function limpiar(){
+				document.getElementById("text_user").value = "";
+				document.getElementById("text_password").value = "";
+			}
+		</script>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+			/*font-family: "Jersey 10", sans-serif; (Primera Fuente - pixel)*/
+			/*font-family: "Cousine", monospace; (Segunda Fuente)*/
+
+			body {
+				background-color: black;
+			}
+
+			.ventana {
+				background-color: white;
+				width: 400px;
+				height: 650px;
+				border-radius: 10px;
+			}
+
+			.logo_so_login {
+				font-family: Rubik Doodle Shadow;
+				font-size: 50px;
+			}
+
+			.img_login {
+				width: 350px;
+				height: 120px;
+			}
+
+			.information_so {
+				font-family: "Jersey 10";
+				font-size: 20px;
+			}
+
+			.ing_form {
+				font-family: "Jersey 10";
+				font-size: 30px;
+				color: darkblue;
+			}
+
+			.btn_act {
+				font-family: "Jersey 10";
+				font-size: 40px;
+			}
+
+			.text_bx {
+				font-size: 25px;
+				width: 250px;
+				height: 30px;
+				text-align: center;
+				font-family: "Jersey 10";
+			}
+		</style>
+	</head>
+	<body>
+		<br>
+		<center><div class="ventana">
+			<center>
+				<b class="logo_so_login">SISTEMAS OPERATIVOS</b>
+				<img src="resources/ejemplos_so.png" class="img_login">
+				<p class="information_so">Ingrese su usuario y contraseña para continuar...</p>
+				<form>
+					<p class="ing_form">Usuario: </p>
+					<input type="text" id="text_user" class="text_bx"></input>
+					<p class="ing_form">Contraseña: </p>
+					<input type="text" id="text_password" class="text_bx"></input>
+					<br><br>
+					<button type="button" onclick="validar()" class="btn_act">Ingresar</button>
+					<button type="button" onclick="limpiar()" class="btn_act">Limpiar</button>
+				</form>
+			</center>
+		</div></center>
+	</body>
+</html>

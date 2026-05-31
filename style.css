@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+/*font-family: "Jersey 10", sans-serif; (Primera Fuente - pixel)*/
+/*font-family: "Cousine", monospace; (Segunda Fuente)*/
+
 body {
     font-family: fantasy;
     margin: 0;
@@ -60,13 +68,18 @@ h2 {
     font-size: 40px;
 }
 
+.info_so p {
+    color: white;
+}
+
 .text_contP {
     font-size: 40px;
     color: skyblue;
 }
 
 .descripcion_principal {
-    color: white;
+    color: whitesmoke;
+    font-family: Cousine;
 }
 
 .ejemplos {
@@ -84,6 +97,7 @@ header {
 
 .logo {
     display: flex;
+    font-family: "Jersey 10", sans-serif;
     align-items: center;
 }
 
@@ -93,6 +107,7 @@ header {
     height: 150px;
     border-style: solid;
     border-radius: 10px;
+    font-family: Rubik Doodle Shadow;
 }
 
 .maqVirtText1 {
@@ -101,6 +116,7 @@ header {
     height: 120px;
     border-style: solid;
     border-radius: 10px;
+    font-family: Rubik Doodle Shadow;
 }
 
 .modulos_t {
@@ -114,12 +130,25 @@ header {
     border-radius: 10px;
 }
 
+.modulos_t a {
+    font-family: Rubik Doodle Shadow;
+}
+
+.text_contP {
+    color: darkblue;
+}
+
+.descripcion_principal {
+    color: black;
+    font-size: 20px;
+}
+
 .exm_t {
     background-color: greenyellow;
     font-size: 30px;
     width: 450px;
     height: 50px;
-    font-family: fantasy;
+    font-family: Rubik Doodle Shadow;;
     border-style: solid;
     border-radius: 10px;
     color: darkgreen;
@@ -128,7 +157,7 @@ header {
 .video_descp {
     background-image: url(resources/metal_fondo.jpg);
     width: 950px;
-    height: 150px;
+    height: 220px;
     border-color: black;
     border-style: solid;
     border-radius: 10px;
@@ -145,6 +174,8 @@ header {
 nav a {
     font-weight: 600;
     padding-right: 10px;
+    font-family: "Jersey 10";
+    font-size: 30px;
 }
 
 nav a:hover {
@@ -249,6 +280,10 @@ nav a:hover {
     background-image: url(resources/btn2.jpg);
 }
 
+.directorio b {
+    font-family: Rubik Doodle Shadow;
+}
+
 .btn3 {
     width: 500px;
     height: auto;
@@ -271,8 +306,8 @@ nav a:hover {
 
 footer {
     background-color: grey;
-    font-size: 30px;
-    font-family: sans-serif;
+    font-size: 40px;
+    font-family: "Jersey 10";
 }
 
 .in {
@@ -450,15 +485,15 @@ footer {
 }
 
 .text1 {
-    font-family: Verdana;
+    font-family: Rubik Doodle Shadow;
     color: white;
     font-size: 40px;
 }
 
 .text2 {
-    font-family: verdana;
+    font-family: Rubik Doodle Shadow;
     font-size: 50px;
-    color: orangered;
+    color: orange;
 }
 
 .bienv {
@@ -546,4 +581,17 @@ footer {
 .logo_img img {
     height: 120px;
     margin-right: 200px;
+}
+
+.text_wSO {
+    font-family: Rubik Doodle Shadow;
+}
+
+.video_descp {
+    font-family: "Jersey 10";
+    font-size: 30px;
+}
+
+.btn {
+    font-family: Rubik Doodle Shadow;
 }
