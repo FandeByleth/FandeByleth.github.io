@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>SISTEMAS OPERATIVOS</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="resources/logo.jpg" alt="company_logo">
+                <h2 class="nombre_empresa">SISTEMAS OPERATIVOS ISC</h2>
+            </div>
+            <nav>
+                <a href="principal.html" class="">Inicio</a>
+                <a href="temas_clase.html" class="">Temas de Clase</a>
+                <a href="powershell.html" class="">PowerShell</a>
+                <a href="maquina_virtual.html" class="">Maquina Virtual</a>
+            </nav> 
+        </header>
+        <center>
+            <div class="unit_text">
+                <b><p>UNIDAD 3. ADMINISTRACION DE MEMORIA</p></b>
+            </div>
+            <br>
+            <div class="unit3_info">
+                <center><b>3.1 POLITICA Y FILOSOFIA</b></center>
+                <p>
+                    <strong>Filosofía</strong>
+                    <br><br>
+                    La memoria principal puede ser considerada como un arreglo lineal de localidades
+                    de almacenamiento de un byte de tamaño. Cada localidad de almacenamiento
+                    tiene asignada una dirección que la identifica.
+                    <br><br>
+                    Una de las funciones básicas que debe implementar un SO es la Administración
+                    de la Memoria para tener un control sobre los lugares donde están almacenados
+                    los datos y procesos que actualmente se están utilizando.
+                    Sea cual sea el esquema de organización del almacenamiento que se adopte para
+                    un sistema específico es necesario decidir que estrategias se deben utilizar para
+                    obtener un rendimiento óptimo.
+                    <br><br>
+                    <strong>Políticas</strong>
+                    <br><br>
+                    <i>FIFO:</i> Los procesos se despachan de acuerdo a su tiempo de llega a la cola de
+                    procesos listos, si un proceso llega al procesador sale hasta que termine. La
+                    política FIFO actualmente no se usa como el esquema principal de un sistema,
+                    pero si por ejemplo cuando se usa una política de prioridades y hay procesos con
+                    la misma prioridad, a estos se les podría aplicar FIFO.
+                </p>
+                <img src="https://preview.redd.it/is-this-a-real-or-fake-memory-unit-v0-62fltt721r2e1.jpg?width=640&crop=smart&auto=webp&s=462843991207bdcc12ee5f1754d303b31db3dfe2" class="tp_img2">
+                <br>
+                <center><b>3.2 MEMORIA REAL</b></center>
+                <p>
+                    La memoria real (o memoria principal) es la memoria física de una computadora (generalmente la memoria RAM) donde el sistema operativo ejecuta directamente los programas y procesos activos. Es una memoria de acceso ultrarrápido y volátil (los datos se pierden al apagar el equipo), a diferencia del almacenamiento secundario como los discos duros.
+                </p>
+                <img src="https://www.crjin.com/esp/net/img/f010.gif" class="gifs_c">
+                <br>
+                <p>
+                    El administrador de memoria del sistema operativo se encarga de asignar espacio a los procesos que lo requieren, llevar un registro de lo que se está utilizando y liberar espacio cuando el programa termina.
+                    <br><br>
+                    <i>Jerarquía:</i> Es el nivel más alto de memoria al que accede directamente el procesador para realizar tareas, a diferencia de la memoria virtual, que utiliza el disco duro como una extensión de la memoria real.
+                    <br><br>
+                    <i>Limite Físico:</i> Como la cantidad de memoria real es limitada, los sistemas operativos suelen usar técnicas de paginación para mover datos temporalmente al disco duro cuando la RAM se llena.
+                </p>
+                <img src="https://www.muypymes.com/wp-content/uploads/2021/06/memoria-virtual.jpg" class="tp_img2">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/swOCvouHeAg?si=G0h2OqC8h8OrgeuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <center><b>3.3 ORGANIZACION DE LA MEMORIA VIRTUAL</b></center>
+                <p>
+                    La memoria virtual es una técnica del Sistema Operativo que permite a los programas utilizar más memoria de la que existe físicamente (RAM). Lo logra combinando la RAM con el disco duro, creando la ilusión de un espacio de direcciones continuo y amplio.
+                </p>
+                <img src="https://www.guiahardware.es/wp-content/uploads/2023/04/memoria-virtual-1024x576.jpg" class="tp_img2">
+                <p>
+                    <strong>Mecanismos clave de organización</strong>
+                    <br><br>
+                    <i>Paginación:</i> La memoria lógica y la física se dividen en bloques de tamaño fijo llamados páginas (en disco) y marcos (en RAM). Se cargan en RAM solo las páginas necesarias en el momento.
+                </p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Memory_paging.jpg/250px-Memory_paging.jpg" class="gifs_c">
+                <p>
+                    <i>Segmentación:</i> Divide la memoria según el significado lógico de la información (ej. código, datos, pila). Cada segmento tiene un tamaño variable.
+                </p>
+                <img src="https://i.ytimg.com/vi/FMhjDVML6eM/sddefault.jpg" class="gifs_c">
+                <p>
+                    <i>Segmentación Paginada:</i> Combina ambas técnicas; divide el programa en segmentos lógicos y cada segmento se divide en páginas
+                </p>
+                <img src="https://www.profesionalreview.com/wp-content/uploads/2020/05/que-es-segmentaci%C3%B3n-paginada.jpg" class="gifs_c">
+                <p>
+                   <strong>Componentes fundamentales</strong>
+                    <br><br>
+                    <i>MMU (Unidad de Manejo de Memoria):</i> Hardware del procesador que traduce en tiempo real las direcciones virtuales (las que ve el programa) a direcciones físicas (la ubicación real en la RAM).
+                    <br><br>
+                    <i>Tabla de Páginas:</i> Estructura de datos utilizada por la MMU para mapear qué página virtual corresponde a qué marco físico en la RAM.
+                    <br><br>
+                    <i>Fallo de Página:</i> Ocurre cuando la CPU intenta acceder a una página que no está en la memoria RAM. El sistema operativo suspende el proceso, busca la página en el disco y la carga en la RAM. 
+                </p>
+                <img src="https://sitechecker.pro/wp-content/uploads/2017/12/pagination.png" class="tp_img2">
+                <br>
+                <center><b>3.4 ADMINISTRACION DE LA MEMORIA VIRTUAL</b></center>
+                <p>
+                    <i>Paginación:</i> Es el método más común. Divide la RAM y el espacio de almacenamiento en bloques de tamaño fijo llamados páginas.
+                    <br><br>
+                    <i>Intercambio (Paging):</i> Cuando la RAM se llena, el sistema operativo traslada las páginas con datos de programas inactivos al disco duro. Esta zona de almacenamiento suele llamarse archivo de paginación (o Swap).
+                    <br><br>
+                    <i>Traducción:</i> La Unidad de Administración de Memoria (MMU) convierte las direcciones virtuales (que ven los programas) a direcciones físicas (la ubicación real en la RAM).
+                    <br><br>
+                    <strong>Principales beneficios</strong>
+                    <br><br>
+                    <i>Ejecución de programas pesados:</i> Permite abrir aplicaciones o juegos que requieren más memoria de la que físicamente tiene instalada el equipo.
+                    <br><br>
+                    <i>Multitarea fluida:</i> Mantiene los programas que estás usando activamente en la RAM rápida y oculta en el disco los procesos en segundo plano.
+                    <br><br>
+                    <i>Aislamiento de memoria:</i> Evita que un programa interfiera accidentalmente con la memoria de otro, mejorando la estabilidad y seguridad.
+                </p>
+                <img src="https://memoriavirtual0.wordpress.com/wp-content/uploads/2022/11/memoriavirtual.png" class="gifs_c">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/7VtjTFSP0vo?si=UGW85PpfcHgIXbUb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <br>
+            </div>
+        </center>
+        <br>
+        <footer>
+            <center>GABRIEL ALEJANDRO ZUÑIGA GONZALEZ <br> CESAR ADRIAN IBARRA GARCIA <br> 4 ISC - "B" T.V</center>
+        </footer>
+    </body>
+</html>
