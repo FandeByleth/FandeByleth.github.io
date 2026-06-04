@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>SISTEMAS OPERATIVOS</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="resources/logo.jpg" alt="company_logo">
+                <h2 class="nombre_empresa">SISTEMAS OPERATIVOS ISC</h2>
+            </div>
+            <nav>
+                <a href="principal.html" class="">Inicio</a>
+                <a href="temas_clase.html" class="">Temas de Clase</a>
+                <a href="powershell.html" class="">PowerShell</a>
+                <a href="maquina_virtual.html" class="">Maquina Virtual</a>
+            </nav> 
+        </header>
+        <center>
+            <div class="unit_text">
+                <b><p>UNIDAD 4. ADMINISTRACION DE ENTRADA/SALIDA</p></b>
+            </div>
+            <br>
+            <div class="unit4_info">
+                <center><b>4.1 DISPOSITIVOS Y MANEJADORES DE DISPOSITIVOS</b></center>
+                <p>
+                    Los dispositivos son los componentes de hardware (periféricos) y el software que componen una computadora, mientras que los manejadores de dispositivos (drivers) son los programas intermedios que permiten al sistema operativo comunicarse directamente con estos equipos físicos.
+                </p>
+                <img src="https://static.wikia.nocookie.net/marisolorjuelaysirleypaez900054/images/f/fa/Entrada.png/revision/latest?cb=20160229011440&path-prefix=es" class="gifs_c">
+                <p>
+                    <strong>Dispositivos (Periféricos)</strong>
+                    <br><br>
+                    Son todos los aparatos auxiliares e independientes que se conectan a la unidad central de procesamiento para enviar, recibir o almacenar información. Se dividen principalmente en tres categorías:
+                    <br><br>
+                    <i>De entrada:</i> Permiten al usuario ingresar datos y comandos al sistema (ej. teclado, ratón, micrófono, escáner).
+                    <br><br>
+                    <i>De salida:</i> Muestran los resultados procesados por la computadora hacia el exterior (ej. monitor, altavoces, impresora).
+                    <br><br>
+                    <i>De almacenamiento:</i> Guardan datos e información para su uso posterior (ej. discos duros, memorias USB, unidades de estado sólido).
+                    <br><br>
+                    A su vez, a nivel lógico del sistema operativo, estos se clasifican en:
+                    <br><br>
+                    <i>Dispositivos de bloque:</i> Almacenan información en bloques de tamaño fijo y permiten leer o escribir de forma independiente (ej. discos duros).
+                    <br><br>
+                    <i>Dispositivos de carácter:</i> Transfieren información como un flujo continuo de datos sin estructura de bloques (ej. impresoras, conexiones de red)
+                </p>
+                <img src="https://www.diloentutospc.com/wp-content/uploads/2023/03/perifericos-de-entrda-salida-y-mixtos-de-la-computadora.png" class="tp_img2">
+                <p>
+                    <strong>Manejadores de Dispositivos (Drivers)</strong>
+                    <br><br>
+                    Son pequeños programas informáticos que sirven como puente lógico entre el sistema operativo y el hardware. Permiten que el sistema controle un componente físico específico sin necesidad de conocer los detalles técnicos exactos de su circuitería interna.
+                </p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuBVihmzsrBLvHhwTtosqMpsiIRIs2Sdb-4w&s" class="gifs_c">
+                <br>
+                <center><b>4.2 MECANISMOS Y FUNCIONES DE LOS MANEJADORES DE DISPOSITIVOS</b></center>
+                <p>
+                    Los manejadores de dispositivos (o drivers) son programas de software que actúan como un puente traductor entre el sistema operativo y el hardware. Su objetivo central es ocultar la complejidad física de los equipos y ofrecer interfaces estandarizadas para que el sistema y las aplicaciones puedan utilizarlos sin conocer sus detalles técnicos.
+                </p>
+                <img src="https://www.wonderfulpcb.com/wp-content/uploads/2025/10/63e2490460cc457e963ca844bbba2139.jpg" class="tp_img2">
+                <p>
+                    <strong>Funciones Principales</strong>
+                    <br><br>
+                    <i>Abstracción de Hardware:</i> Traducen las peticiones abstractas del sistema operativo a instrucciones específicas y de bajo nivel que el componente físico puede procesar.
+                    <br><br>
+                    <i>Manejo de Interrupciones:</i> Gestionan las señales y peticiones (interrupts) que los periféricos envían a la CPU, sincronizando la velocidad del procesador con la de los dispositivos.
+                    <br><br>
+                    <i>Gestión de Errores:</i> Detectan fallos, malfuncionamientos o bloqueos al acceder a los periféricos y ejecutan protocolos para solucionarlos o notificar al sistema operativo.
+                    <br><br>
+                    <i>Administración de Colas:</i> Organizan las solicitudes de entrada/salida (E/S) mediante mecanismos como FIFO (primero en entrar, primero en salir) para regular el flujo de datos.
+                    <br><br>
+                    <strong>Mecanismos de Funcionamiento</strong>
+                    <br><br>
+                    <i>Interacción con Registros:</i> Envían comandos y leen estados directamente en los registros del controlador físico del dispositivo.
+                    <br><br>
+                    <i>Manejadores de Interrupciones (ISR - Interrupt Service Routines):</i> Bloquean o pausan procesos mientras esperan a que el dispositivo complete una acción (como imprimir un documento) y "despiertan" al procesador cuando la tarea está lista.
+                    <br><br>
+                    <i>Acceso Directo a Memoria (DMA):</i> En dispositivos de alta velocidad, los manejadores configuran el hardware DMA para que transfiera datos directamente entre el periférico y la memoria RAM principal sin sobrecargar la CPU.
+                    <br><br>
+                    <i>Estructura Modular:</i> Se dividen en una parte dependiente del dispositivo (código específico para un modelo y marca) y una independiente del dispositivo (reglas generales que el sistema operativo utiliza para interactuar con categorías de hardware)
+                </p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Device-driver-es.svg" class="tp_img2">
+                <br>
+                <center><b>4.3 ESTRUCTURAS DE DATOS PARA MANEJO DE DISPOSITIVOS</b></center>
+                <p>
+                    Las estructuras de datos para el manejo de dispositivos son los componentes del kernel que permiten al sistema operativo comunicarse con el hardware. Actúan como un puente que traduce las peticiones abstractas del usuario en órdenes físicas para los controladores, utilizando buffers, colas y tablas específicas.
+                    <br><br>
+                    <strong>Estructuras de Datos</strong>
+                    <br><br>
+                    <i>Bloques de Control de Dispositivo (DCB):</i> Estructuras que guardan el estado actual, tipo, dirección de memoria y el propietario de cada dispositivo.
+                </p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ17lXceH3xpOONpoujsXYxeXmT2MztfqJ-bg&s" class="gifs_c">
+                <p>
+                    <i>Colas de Solicitud de E/S:</i> Listas enlazadas que almacenan las peticiones pendientes de varios procesos hacia un mismo hardware (ej. el disco duro).
+                </p>
+                <img src="https://cerebriti.b-cdn.net/uploads/898538d8d72ffacb2d10402c09e1a01e.png" class="tp_img2">
+                <p>
+                    <i>Tablas de Dispositivos:</i> Catálogos mantenidos por el sistema operativo que mapean el nombre lógico del dispositivo con su respectivo controlador (driver).
+                </p>
+                <img src="https://image.slidesharecdn.com/tabladedispositivosdeentradaysalida-190115015133/85/Tabla-de-dispositivos-de-entrada-y-salida-2-320.jpg" class="gifs_c">
+                <p>
+                    Buffers y Caches: Bloques de memoria temporal utilizados para nivelar la diferencia de velocidad entre la CPU y los periféricos
+                </p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAuFFp5XzU3OIVLjyS-8Gz8CEV0f3g1CUVCQ&s" class="tp_img2">
+                <br>
+                <center><b>4.4 OPERACIONES DE ENTRADA/SALIDA (E/S)</b></center>
+                <p>
+                    Las operaciones de E/S (Entrada/Salida) son los procesos mediante los cuales un sistema informático se comunica con el mundo exterior. Permiten la transferencia de datos entre el procesador (CPU) o la memoria y los dispositivos periféricos (como teclados, discos duros, impresoras o tarjetas de red).
+                    <br><br>
+                    <strong>Técnicas de transferencia</strong>
+                    <br><br>
+                    Existen diferentes métodos para realizar estas operaciones dependiendo de la eficiencia y la carga de la CPU:
+                    <br><br>
+                    <i>E/S Programada:</i> El procesador envía la orden y espera en un bucle continuo hasta que el dispositivo termina. Consume mucho tiempo de CPU.
+                    <br><br>
+                    <i>E/S por Interrupciones:</i> El procesador envía la instrucción y continúa ejecutando otras tareas. El periférico envía una señal ("interrupción") cuando está listo.
+                    <br><br>
+                    <i>Acceso Directo a Memoria (DMA):</i> Un controlador especializado transfiere los datos directamente entre el periférico y la memoria principal sin la intervención constante de la CPU.
+                    <br><br>
+                    <strong>E/S en Software</strong>
+                    <br><br>
+                    A nivel de software y sistemas operativos, la gestión de E/S incluye técnicas para optimizar el rendimiento:
+                    <br><br>
+                    <i>Buffering:</i> Uso de áreas de memoria temporal (búferes) para retener datos mientras se transfieren.
+                    <br><br>
+                    <i>Spooling:</i> Almacenamiento temporal de trabajos (por ejemplo, documentos en cola de impresión) para que los dispositivos más lentos no bloqueen a los procesos más rápidos.
+                </p>
+                <img src="https://i.ytimg.com/vi/N37B3m9_7KQ/maxresdefault.jpg" class="tp_img2">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dOASdyya0eA?si=u7OxsYcq5RLRKbyL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <br>
+            </div>
+        </center>
+        <br>
+        <footer>
+            <center>GABRIEL ALEJANDRO ZUÑIGA GONZALEZ <br> CESAR ADRIAN IBARRA GARCIA <br> 4 ISC - "B" T.V</center>
+        </footer>
+    </body>
+</html>

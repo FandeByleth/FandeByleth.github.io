@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <script>
+            function review(){
+                var rpta_user = new Array(20);
+                const rpta_real = ["B","B","A","B","B","B","A","A","A","B","C","A","A","B","B","B","B","B","B","A"];
+                let calificacion = 0;
+                let result;
+
+                rpta_user[0] = (document.getElementById("P1_exam")).value;
+                rpta_user[1] = (document.getElementById("P2_exam")).value;
+                rpta_user[2] = (document.getElementById("P3_exam")).value;
+                rpta_user[3] = (document.getElementById("P4_exam")).value;
+                rpta_user[4] = (document.getElementById("P5_exam")).value;
+                rpta_user[5] = (document.getElementById("P6_exam")).value;
+                rpta_user[6] = (document.getElementById("P7_exam")).value;
+                rpta_user[7] = (document.getElementById("P8_exam")).value;
+                rpta_user[8] = (document.getElementById("P9_exam")).value;
+                rpta_user[9] = (document.getElementById("P10_exam")).value;
+
+                rpta_user[10] = (document.getElementById("P11_exam")).value;
+                rpta_user[11] = (document.getElementById("P12_exam")).value;
+                rpta_user[12] = (document.getElementById("P13_exam")).value;
+                rpta_user[13] = (document.getElementById("P14_exam")).value;
+                rpta_user[14] = (document.getElementById("P15_exam")).value;
+                rpta_user[15] = (document.getElementById("P16_exam")).value;
+                rpta_user[16] = (document.getElementById("P17_exam")).value;
+                rpta_user[17] = (document.getElementById("P18_exam")).value;
+                rpta_user[18] = (document.getElementById("P19_exam")).value;
+                rpta_user[19] = (document.getElementById("P20_exam")).value;
+
+                for(let i=0; i<20; i++){
+                    if(rpta_user[i] === rpta_real[i]){
+                        calificacion += 5;
+                    }
+                }
+
+                result = "PUNTAJE: " + calificacion + "/100";
+
+                if(calificacion >= 80){
+                    result+= "\nFELICIDADES, USTED HA APROBADO EL EXAMEN!!!";
+                }
+                else{
+                    result+= "\nUSTED NO HA APROBADO EL EXAMEN!!!";
+                }
+
+                alert(result);
+            }
+
+            function reload(){
+                window.location.reload();
+            }
+        </script>
+        <link rel="stylesheet" href="style.css">
+        <title>SISTEMAS OPERATIVOS</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="resources/logo.jpg" alt="company_logo">
+                <h2 class="nombre_empresa">SISTEMAS OPERATIVOS ISC</h2>
+            </div>
+            <nav>
+                <a href="principal.html" class="">Inicio</a>
+                <a href="temas_clase.html" class="">Temas de Clase</a>
+                <a href="powershell.html" class="">PowerShell</a>
+                <a href="maquina_virtual.html" class="">Maquina Virtual</a>
+            </nav> 
+        </header>
+        <center>
+            <div class="unit_text">
+                <b><p>EXAMEN FINAL DE CONCEPTOS BASICOS DE SISTEMAS OPERATIVOS</p></b>
+            </div>
+            <br>
+            <div class="unit_esp">
+                <p><strong><i>Instrucciones:</i> Lee cada pregunta y selecciona la respuesta que consideres correcta para cada planteamiento.</strong></p>
+                <p><strong><i>NOTA: </i> Para poder aprobar el examen se necesita una calificacion minima de 80.</strong></p>
+                <br>
+                <form>
+                <p><strong><i>1. </i> ¿Cuál es la función principal del núcleo (kernel) de un sistema operativo?</strong></p>
+                <select id="P1_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Proporcionar una interfaz gráfica de usuario para el manejo de archivos.</p></option>
+                    <option value="B"><p>Gestionar los recursos del sistema y permitir la comunicación entre el hardware y el software.</p></option>
+                    <option value="C"><p>Compilar el código fuente de las aplicaciones del usuario.</p></option>
+                    <option value="D"><p>Garantizar que el ordenador esté conectado constantemente a internet.</p></option>
+                </select>
+                <br>
+                <p><strong><i>2. </i>  ¿Qué diferencia fundamental existe entre el "modo usuario" y el "modo kernel" (modo supervisor)?</strong></p>
+                <select id="P2_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>En el modo usuario se ejecutan instrucciones de hardware privilegiadas y en el modo kernel no.</p></option>
+                    <option value="B"><p>El modo kernel tiene acceso total y sin restricciones al hardware, mientras que el modo usuario tiene restricciones estrictas para proteger el sistema.</p></option>
+                    <option value="C"><p>El modo usuario requiere obligatoriamente una cuenta con contraseña de administrador para activarse.</p></option>
+                    <option value="D"><p>El modo kernel solo se activa cuando el ordenador arranca en "modo seguro".</p></option>
+                </select>
+                <br>
+                <p><strong><i>3. </i> ¿Para qué se utiliza una llamada al sistema (system call)?</strong></p>
+                <select id="P3_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Para permitir que los programas de usuario soliciten servicios protegidos directamente al núcleo del sistema operativo.</p></option>
+                    <option value="B"><p>Para actualizar las aplicaciones instaladas desde un servidor remoto.</p></option>
+                    <option value="C"><p>Para realizar una llamada telefónica por medio de internet utilizando VoIP.</p></option>
+                    <option value="D"><p>Para reiniciar la BIOS o UEFI del ordenador de manera automática.</p></option>
+                </select>
+                <br>
+                <p><strong><i>4. </i> ¿Cuál es la principal ventaja de un sistema operativo con arquitectura de micronúcleo (microkernel)?</strong></p>
+                <select id="P4_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Mayor velocidad de ejecución en todas las operaciones del sistema.</p></option>
+                    <option value="B"><p>Modularidad, estabilidad y facilidad para aislar fallos de los controladores de dispositivos.</p></option>
+                    <option value="C"><p>Que elimina por completo la necesidad de usar memoria virtual.</p></option>
+                    <option value="D"><p>Que reduce drásticamente el espacio total de almacenamiento en el disco duro.</p></option>
+                </select>
+                <br>
+                <p><strong><i>5. </i> ¿Qué es un "hilo" (thread) en el contexto de un sistema operativo?</strong></p>
+                <select id="P5_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Un cable físico que conecta la CPU con los módulos de memoria RAM.</p></option>
+                    <option value="B"><p>La unidad más pequeña de ejecución planificable dentro de un proceso.</p></option>
+                    <option value="C"><p>Un algoritmo de cifrado para asegurar las comunicaciones de red.</p></option>
+                    <option value="D"><p>Un sector físico del disco duro donde se guardan datos temporales.</p></option>
+                </select>
+                <br>
+                <p><strong><i>6. </i> ¿Qué ocurre exactamente durante un "cambio de contexto" (context switch)?</strong></p>
+                <select id="P6_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>El sistema operativo cambia el idioma de la interfaz gráfica.</p></option>
+                    <option value="B"><p>La CPU guarda el estado del proceso actual y carga el estado de un proceso diferente para comenzar a ejecutarlo.</p></option>
+                    <option value="C"><p>El disco duro formatea un sector para albergar un nuevo sistema de archivos.</p></option>
+                    <option value="D"><p>Un proceso se duplica instantáneamente en la memoria RAM.</p></option>
+                </select>
+                <br>
+                <p><strong><i>7. </i> ¿Cuál es el propósito principal del algoritmo de planificación Round Robin (RR)?</strong></p>
+                <select id="P7_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Asignar la CPU de forma equitativa otorgando a cada proceso un pequeño intervalo de tiempo llamado "cuanto".</p></option>
+                    <option value="B"><p>Ejecutar siempre primero el proceso que requiera menos tiempo de cómputo total.</p></option>
+                    <option value="C"><p>Dar prioridad exclusiva a los procesos que realizan operaciones de entrada/salida.</p></option>
+                    <option value="D"><p>Evitar de forma absoluta las condiciones de carrera mediante hardware.</p></option>
+                </select>
+                <br>
+                <p><strong><i>8. </i> ¿Qué es una "condición de carrera" (race condition)?</strong></p>
+                <select id="P8_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Una situación donde el resultado final depende del orden exacto de acceso a recursos compartidos por múltiples hilos o procesos.</p></option>
+                    <option value="B"><p>La competencia de rendimiento entre procesadores de diferentes marcas.</p></option>
+                    <option value="C"><p>Un programa que mide los fotogramas por segundo de una tarjeta gráfica.</p></option>
+                    <option value="D"><p>Un algoritmo que busca acelerar la velocidad de arranque del sistema.</p></option>
+                </select>
+                <br>
+                <p><strong><i>9. </i> ¿Qué problema resuelven los semáforos o los 'mutex' en los sistemas operativos?</strong></p>
+                <select id="P9_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>La protección de la sección crítica y la exclusión mutua de los recursos compartidos.</p></option>
+                    <option value="B"><p>El aumento de la capacidad física de almacenamiento de los discos rígidos.</p></option>
+                    <option value="C"><p>La aceleración de la velocidad del reloj de los núcleos de la CPU.</p></option>
+                    <option value="D"><p>La asignación automática de direcciones IP dinámicas.</p></option>
+                </select>
+                <br>
+                <p><strong><i>10. </i> ¿Qué es un "proceso zombie" en sistemas tipo Unix o Linux?</strong></p>
+                <select id="P10_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Un proceso dañino que ha consumido el 100% de la capacidad de la CPU de forma continua.</p></option>
+                    <option value="B"><p>Un proceso que terminó su ejecución pero sigue en la tabla de procesos porque su padre no ha leído su estado de salida.</p></option>
+                    <option value="C"><p>Un software malicioso que permite controlar el ordenador de forma remota.</p></option>
+                    <option value="D"><p>Un proceso que fue enviado por completo al espacio de intercambio (swap) en el disco.</p></option>
+                </select>
+                <br>
+                <p><strong><i>11. </i> ¿Cuál de las siguientes opciones NO es una condición necesaria de Coffman para que ocurra un interbloqueo (deadlock)?</strong></p>
+                <select id="P11_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Exclusión mutua.</p></option>
+                    <option value="B"><p>Retención y espera (Hold and wait).</p></option>
+                    <option value="C"><p>Paginación bajo demanda.</p></option>
+                    <option value="D"><p>Espera circular.</p></option>
+                </select>
+                <br>
+                <p><strong><i>12. </i> En la gestión de memoria, ¿qué problema de asignación busca resolver la paginación?</strong></p>
+                <select id="P12_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>La fragmentación externa de la memoria física.</p></option>
+                    <option value="B"><p>La lentitud en la velocidad de rotación de los discos mecánicos.</p></option>
+                    <option value="C"><p>El exceso de consumo de energía del procesador.</p></option>
+                    <option value="D"><p>La colisión de paquetes de datos en la tarjeta de red.</p></option>
+                </select>
+                <br>
+                <p><strong><i>13. </i> ¿Qué es la "fragmentación interna" en la asignación de memoria?</strong></p>
+                <select id="P13_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p> El espacio que se desperdicia dentro de un bloque asignado porque el proceso es más pequeño que el tamaño fijo del bloque.</p></option>
+                    <option value="B"><p> Los huecos libres que quedan dispersos entre diferentes procesos en la memoria.</p></option>
+                    <option value="C"><p>La pérdida total de datos debido a fallos de voltaje en los módulos RAM.</p></option>
+                    <option value="D"><p>El retraso que ocurre al transferir páginas de la RAM al almacenamiento masivo.</p></option>
+                </select>
+                <br>
+                <p><strong><i>14. </i> ¿Qué es un "fallo de página" (page fault)?</strong></p>
+                <select id="P14_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Un defecto físico e irreversible en los chips de la memoria RAM.</p></option>
+                    <option value="B"><p>Una interrupción que ocurre cuando un programa intenta acceder a una página de memoria que no está cargada actualmente en la RAM física.</p></option>
+                    <option value="C"><p>Un error crítico que provoca una pantalla azul o pánico del sistema.</p></option>
+                    <option value="D"><p>Un sector defectuoso en la superficie del disco duro.</p></option>
+                </select>
+                <br>
+                <p><strong><i>15. </i> ¿Cuál es el objetivo primordial del mecanismo de Memoria Virtual?</strong></p>
+                <select id="P15_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Duplicar la velocidad física de transferencia de los módulos RAM instalados.</p></option>
+                    <option value="B"><p>Permitir la simulación de una cantidad de memoria superior a la físicamente disponible utilizando espacio del disco secundario.</p></option>
+                    <option value="C"><p>Crear respaldos automáticos en la nube de los archivos críticos del usuario.</p></option>
+                    <option value="D"><p>Cifrar la información de la RAM para evitar ataques de inyección de código.</p></option>
+                </select>
+                <br>
+                <p><strong><i>16. </i> ¿Qué es el fenómeno conocido como "hiperactividad de paginación" (thrashing)?</strong></p>
+                <select id="P16_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Un sistema de optimización para unidades de estado sólido (SSD).</p></option>
+                    <option value="B"><p>Un estado en el que el sistema operativo pasa más tiempo intercambiando páginas entre el disco y la RAM que ejecutando instrucciones reales.</p></option>
+                    <option value="C"><p>La eliminación automática y masiva de archivos temporales del sistema.</p></option>
+                    <option value="D"><p>La duplicación infinita de un proceso debido a un virus informático.</p></option>
+                </select>
+                <br>
+                <p><strong><i>17. </i> ¿Cuál de las siguientes opciones representa las secciones estándar de la memoria de un proceso en ejecución?</strong></p>
+                <select id="P17_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Registro de arranque maestro (MBR) y sectores lógicos.</p></option>
+                    <option value="B"><p>Pila (Stack) y Montículo (Heap).</p></option>
+                    <option value="C"><p>Canal de acceso directo a memoria (DMA) y buses de datos.</p></option>
+                    <option value="D"><p>Tabla de particiones lógicas e inodos de control.</p></option>
+                </select>
+                <br>
+                <p><strong><i>18. </i> 18. ¿Qué algoritmo de reemplazo de páginas sustituye a aquella página que no ha sido utilizada durante el período de tiempo más largo?</strong></p>
+                <select id="P18_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>FIFO (First-In, First-Out).</p></option>
+                    <option value="B"><p>LRU (Least Recently Used).</p></option>
+                    <option value="C"><p>Algoritmo de la página óptima (OPT).</p></option>
+                    <option value="D"><p>MFU (Most Frequently Used).</p></option>
+                </select>
+                <br>
+                <p><strong><i>19. </i> En los sistemas de archivos de tipo Unix/Linux, ¿cuál es la función de un "inodo" (inode)?</strong></p>
+                <select id="P19_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Guardar el nombre del archivo y sus datos legibles en un solo bloque.</p></option>
+                    <option value="B"><p>Almacenar los metadatos de un archivo (permisos, tamaño) y los punteros a sus bloques de datos físicos.</p></option>
+                    <option value="C"><p>Mantener una copia de la caché DNS para acelerar la navegación web.</p></option>
+                    <option value="D"><p>Organizar la desfragmentación automática de unidades NTFS.</p></option>
+                </select>
+                <br>
+                <p><strong><i>20. </i> ¿A qué se refiere el término "SPOOLING" (Simultaneous Peripheral Operations On-Line)?</strong></p>
+                <select id="P20_exam" class="text_lst" required>
+                    <option value="" selected disabled></option>
+                    <option value="A"><p>Al uso de un almacenamiento intermedio para guardar tareas en espera hasta que un periférico lento esté listo para procesarlas.</p></option>
+                    <option value="B"><p>Al aumento controlado de los voltajes en los buses de la placa base (overclocking).</p></option>
+                    <option value="C"><p>A la clonación exacta de discos rígidos mediante configuraciones RAID 1.</p></option>
+                    <option value="D"><p>A un protocolo de enrutamiento dinámico para redes de área amplia (WAN).</p></option>
+                </select>
+                <br><br><br>
+                <button type="button" class="btn_exam" onclick="review()">REVISAR</button>
+                <button type="button" class="btn_exam" onclick="reload()">REINICIAR</button>
+                </form>
+            </div>
+        </center>
+        <br>
+        <footer>
+            <center>GABRIEL ALEJANDRO ZUÑIGA GONZALEZ <br> CESAR ADRIAN IBARRA GARCIA <br> 4 ISC - "B" T.V</center>
+        </footer>
+    </body>
+</html>
